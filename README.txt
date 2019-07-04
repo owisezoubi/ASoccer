@@ -1,6 +1,6 @@
-#ASoccer
+# iSoccer
 
-ASoccer Application is an iOS app which presents an up-to-date soccer data (competition standings) for clubs worldwide. 
+iSoccer Application is an iOS app which presents an up-to-date soccer data (competition standings) for clubs worldwide. 
 The App uses backendless database (backend) with codeless-built server-side APIs.
 It has user registration with login and a responsive UI for all iPhone devices.
 
