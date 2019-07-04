@@ -1,0 +1,6 @@
+framework module Pods_ASoccer {
+  umbrella header "Pods-ASoccer-umbrella.h"
+
+  export *
+  module * { export * }
+}

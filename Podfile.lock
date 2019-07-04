@@ -1,0 +1,28 @@
+PODS:
+  - Backendless (5.3.8):
+    - Socket.IO-Client-Swift
+  - Socket.IO-Client-Swift (15.1.0):
+    - Starscream (~> 3.1)
+  - Starscream (3.1.0)
+  - TextFieldEffects (1.6.0)
+
+DEPENDENCIES:
+  - Backendless
+  - TextFieldEffects
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Backendless
+    - Socket.IO-Client-Swift
+    - Starscream
+    - TextFieldEffects
+
+SPEC CHECKSUMS:
+  Backendless: d29c5c2394ae4ec11bfc89fd255ebf0ef7c13d6c
+  Socket.IO-Client-Swift: 7cb44c0ffb86e158cee32d0642d30ec5fdcf8f61
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
+
+PODFILE CHECKSUM: 1750448c333386a98d64d65b4809e60afcd3add6
+
+COCOAPODS: 1.6.2
