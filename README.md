@@ -4,6 +4,9 @@ ASoccer Application is an iOS app which presents an up-to-date soccer data (comp
 The App uses backendless database (backend) with codeless-built server-side APIs.
 It has user registration with login and a responsive UI for all iPhone devices.
 
+
+-------------------------------------------------------------------------------------------------------------------------
+
 <img src="https://user-images.githubusercontent.com/48488596/60682263-5a15ac00-9e9b-11e9-8cc3-9c98683b6a88.png" width=250 height=450/>&emsp;
 <img src="https://user-images.githubusercontent.com/48488596/60682264-5a15ac00-9e9b-11e9-951d-39e88815e2da.png" width=250 height=450/>&emsp;
 <img src="https://user-images.githubusercontent.com/48488596/60682265-5aae4280-9e9b-11e9-8554-6e308c14ed51.png" width=250 height=450/>&emsp;
