@@ -166,9 +166,25 @@ class WelcomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if CheckInternet.Connection(){
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            
+//            guard let navigationVC = mainStoryBoard.instantiateViewController(withIdentifier: "NavigationVC") as? NavigationVC else {
+//                return
+//            }
+//
+//            if let navVC = navigationVC.topViewController as? CompetitionStandingVC {
+//                navVC.competition = currentCompetition[indexPath.row]
+//            }
+//
+//            self.present(navigationVC, animated: true, completion: nil)
+            
+            
+            
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "CompetitionStandingVC") as! CompetitionStandingVC
             vc.competition = currentCompetition[indexPath.row]
-            self.present(vc, animated: true, completion: nil)
+            
+            present(vc, animated: true, completion: nil)
+            
         } else {
             displayMessage(userMessage: "Connection Lost, Please reconnect to the Internet")
         }

@@ -22,12 +22,20 @@ class CompetitionStandingVC: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        //football class contains the codeless functions in Backendless server
+        //getCompetitionStandingJsonData() method returning raw json data as planned in backendless Codeless method that created there
+        //getJsonData will parse the JSON from backendless.getCompetitionStandingJsonData to an Array of CompetitionStanding(struct)
         getCompetitionStandingJsonData()
     }
     
     
     @IBAction func dismissToWelcomeVC(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        if CheckInternet.Connection(){
+            dismiss(animated: true, completion: nil)
+        } else {
+            displayMessage(userMessage: "Connection Lost, Please reconnect to the Internet")
+        }
     }
     
     func getCompetitionStandingJsonData(){
@@ -103,6 +111,32 @@ class CompetitionStandingVC: UIViewController, UITableViewDataSource, UITableVie
         return 50
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if CheckInternet.Connection(){
+//            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//
+//            guard let navigationVC = mainStoryBoard.instantiateViewController(withIdentifier: "NavigationVC") as? NavigationVC else {
+//                return
+//            }
+//
+//            if let navVC = navigationVC.topViewController as? TeamInfo {
+//                navVC.team = currentCompetition[indexPath.row]
+//            }
+//
+//            self.present(navigationVC, animated: true, completion: nil)
+//
+            
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "TeamInfoVC") as! TeamInfoVC
+            vc.teamID = currentCompetitionStandingArray[indexPath.row].team_id
+            vc.competition = competition
+            
+            present(vc, animated: true, completion: nil)
+        } else {
+            displayMessage(userMessage: "Connection Lost, Please reconnect to the Internet")
+        }
+    }
     
     
     ///////////////////////////////////////////////////////////////////////////////////////////////////

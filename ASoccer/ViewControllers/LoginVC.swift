@@ -83,7 +83,11 @@ class LoginVC: UIViewController {
         
         //hide the Activity Indicator at the beginning
         myActivityIndicator.isHidden = true
+        
     }
+    
+    
+    
     
     @IBAction func ViewMainView(_ sender: AnyObject) {
         animateIn(myView: LogInView)
