@@ -12,6 +12,9 @@
 		0F22E1B61E8407D1004B722A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F22E1B51E8407D1004B722A /* Assets.xcassets */; };
 		0F22E1B91E8407D1004B722A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F22E1B71E8407D1004B722A /* LaunchScreen.storyboard */; };
 		8002F4C622D33D49006E20B8 /* TeamInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002F4C522D33D49006E20B8 /* TeamInfoCollectionViewCell.swift */; };
+		8002F4C822D7657A006E20B8 /* TeamInfoTransferInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002F4C722D7657A006E20B8 /* TeamInfoTransferInTableViewCell.swift */; };
+		8002F4CA22D8F091006E20B8 /* TeamInfoTransferOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002F4C922D8F091006E20B8 /* TeamInfoTransferOutTableViewCell.swift */; };
+		8002F4CC22DA2376006E20B8 /* TeamInfoSideLinedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002F4CB22DA2376006E20B8 /* TeamInfoSideLinedTableViewCell.swift */; };
 		80DED27322CE5C4F0008753D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DED27222CE5C4F0008753D /* LoginVC.swift */; };
 		80DED27522CE5C620008753D /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DED27422CE5C620008753D /* WelcomeVC.swift */; };
 		80DED27722CE5C8B0008753D /* CompetitionStandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DED27622CE5C8B0008753D /* CompetitionStandingVC.swift */; };
@@ -24,7 +27,6 @@
 		80DED28522CE5D0D0008753D /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DED28422CE5D0D0008753D /* CheckInternet.swift */; };
 		80DED28722CE5F700008753D /* Football.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DED28622CE5F700008753D /* Football.swift */; };
 		80DED28922CFA5280008753D /* TeamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DED28822CFA5280008753D /* TeamInfo.swift */; };
-		80DED28B22D0ABF80008753D /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DED28A22D0ABF80008753D /* NavigationVC.swift */; };
 		80DED28D22D0BBF30008753D /* TeamInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DED28C22D0BBF30008753D /* TeamInfoVC.swift */; };
 		B001629C959C0894DC55ABC2 /* Pods_ASoccer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA474D171F87952FA2EC25E6 /* Pods_ASoccer.framework */; };
 /* End PBXBuildFile section */
@@ -37,6 +39,9 @@
 		0F22E1B81E8407D1004B722A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F22E1BA1E8407D1004B722A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8002F4C522D33D49006E20B8 /* TeamInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		8002F4C722D7657A006E20B8 /* TeamInfoTransferInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoTransferInTableViewCell.swift; sourceTree = "<group>"; };
+		8002F4C922D8F091006E20B8 /* TeamInfoTransferOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoTransferOutTableViewCell.swift; sourceTree = "<group>"; };
+		8002F4CB22DA2376006E20B8 /* TeamInfoSideLinedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoSideLinedTableViewCell.swift; sourceTree = "<group>"; };
 		80DED27222CE5C4F0008753D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		80DED27422CE5C620008753D /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		80DED27622CE5C8B0008753D /* CompetitionStandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionStandingVC.swift; sourceTree = "<group>"; };
@@ -49,7 +54,6 @@
 		80DED28422CE5D0D0008753D /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		80DED28622CE5F700008753D /* Football.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Football.swift; sourceTree = "<group>"; };
 		80DED28822CFA5280008753D /* TeamInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfo.swift; sourceTree = "<group>"; };
-		80DED28A22D0ABF80008753D /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
 		80DED28C22D0BBF30008753D /* TeamInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoVC.swift; sourceTree = "<group>"; };
 		BA474D171F87952FA2EC25E6 /* Pods_ASoccer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ASoccer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F44D867C37F78B9000BA9A /* Pods-ASoccer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASoccer.release.xcconfig"; path = "Target Support Files/Pods-ASoccer/Pods-ASoccer.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,12 +115,12 @@
 		80DED27022CE5BE00008753D /* swiftFiles */ = {
 			isa = PBXGroup;
 			children = (
+				80DED28622CE5F700008753D /* Football.swift */,
 				80DED27C22CE5CD80008753D /* CustomButton.swift */,
 				80DED27E22CE5CE50008753D /* GradientView.swift */,
+				80DED28422CE5D0D0008753D /* CheckInternet.swift */,
 				80DED28022CE5CF40008753D /* Competition.swift */,
 				80DED28222CE5CFF0008753D /* CompetitionStanding.swift */,
-				80DED28422CE5D0D0008753D /* CheckInternet.swift */,
-				80DED28622CE5F700008753D /* Football.swift */,
 				80DED28822CFA5280008753D /* TeamInfo.swift */,
 			);
 			path = swiftFiles;
@@ -131,8 +135,10 @@
 				80DED28C22D0BBF30008753D /* TeamInfoVC.swift */,
 				80DED27822CE5CAD0008753D /* competitionStandingTableViewCell.swift */,
 				80DED27A22CE5CC30008753D /* CompetitionsTableViewCell.swift */,
-				80DED28A22D0ABF80008753D /* NavigationVC.swift */,
 				8002F4C522D33D49006E20B8 /* TeamInfoCollectionViewCell.swift */,
+				8002F4C722D7657A006E20B8 /* TeamInfoTransferInTableViewCell.swift */,
+				8002F4C922D8F091006E20B8 /* TeamInfoTransferOutTableViewCell.swift */,
+				8002F4CB22DA2376006E20B8 /* TeamInfoSideLinedTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -272,19 +278,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80DED28B22D0ABF80008753D /* NavigationVC.swift in Sources */,
+				8002F4CC22DA2376006E20B8 /* TeamInfoSideLinedTableViewCell.swift in Sources */,
 				80DED28D22D0BBF30008753D /* TeamInfoVC.swift in Sources */,
 				80DED28522CE5D0D0008753D /* CheckInternet.swift in Sources */,
 				80DED28122CE5CF40008753D /* Competition.swift in Sources */,
 				0F22E1AF1E8407D1004B722A /* AppDelegate.swift in Sources */,
 				80DED28922CFA5280008753D /* TeamInfo.swift in Sources */,
 				80DED27722CE5C8B0008753D /* CompetitionStandingVC.swift in Sources */,
+				8002F4C822D7657A006E20B8 /* TeamInfoTransferInTableViewCell.swift in Sources */,
 				80DED27922CE5CAD0008753D /* competitionStandingTableViewCell.swift in Sources */,
 				80DED27D22CE5CD80008753D /* CustomButton.swift in Sources */,
 				80DED27322CE5C4F0008753D /* LoginVC.swift in Sources */,
 				8002F4C622D33D49006E20B8 /* TeamInfoCollectionViewCell.swift in Sources */,
 				80DED27522CE5C620008753D /* WelcomeVC.swift in Sources */,
 				80DED27B22CE5CC30008753D /* CompetitionsTableViewCell.swift in Sources */,
+				8002F4CA22D8F091006E20B8 /* TeamInfoTransferOutTableViewCell.swift in Sources */,
 				80DED27F22CE5CE50008753D /* GradientView.swift in Sources */,
 				80DED28322CE5CFF0008753D /* CompetitionStanding.swift in Sources */,
 				80DED28722CE5F700008753D /* Football.swift in Sources */,

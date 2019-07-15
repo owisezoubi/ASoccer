@@ -53,7 +53,7 @@ class CompetitionStandingVC: UIViewController, UITableViewDataSource, UITableVie
             currentCompetitionStandingArray = competitionStandingArray
             CompetitionSeason.text = competitionStandingArray[0].season
         } else {
-            displayMessage(userMessage: "There is no data to show, try again later")
+            displayMessage(userMessage: "Something went wrong with showing and loading the Data: \n -check if there is Network Connection.  \n  -shut off the app and start again. \n\n If it didn't work PLEASE contact us at: owisezoubi@gmail.com")
         }
         CompetitionName.text = competition?.name
     }
@@ -155,7 +155,7 @@ class CompetitionStandingVC: UIViewController, UITableViewDataSource, UITableVie
             
             let OkActionButton = UIAlertAction(title: "OK", style: .default, handler: { (action:UIAlertAction) in
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
+//                    self.dismiss(animated: true, completion: nil)
                 }
             })
             alertController.addAction(OkActionButton)

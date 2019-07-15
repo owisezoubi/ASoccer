@@ -136,14 +136,20 @@ class WelcomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     //function that parsing the JSON data from Backendless.getAllCompetition to an Array of COmpetition struct
     func getCompetitionJsonData(){
         let competitions = Football.sharedInstance.getAllCompetitions()
-        let jsonData = try? JSONSerialization.data(withJSONObject: competitions)
-        guard let data = jsonData else {return}
-        do {
-            self.competitionsArray = try JSONDecoder().decode([Competition].self, from: data)
-        } catch let jsonErr{
-            print("Error serializing json:", jsonErr )
+        
+        if JSONSerialization.isValidJSONObject(competitions){
+            print(competitions)
+            let jsonData = try? JSONSerialization.data(withJSONObject: competitions)
+            guard let data = jsonData else {return}
+            do {
+                self.competitionsArray = try JSONDecoder().decode([Competition].self, from: data)
+            } catch let jsonErr{
+                print("Error serializing json:", jsonErr )
+            }
+            currentCompetition = competitionsArray
+        } else {
+            displayMessage(userMessage: "Something went wrong with showing and loading the Data: \n -check if there is Network Connection.  \n  -shut off the app and start again. \n\n If it didn't work PLEASE contact us at: owisezoubi@gmail.com")
         }
-        currentCompetition = competitionsArray
     }
     
     

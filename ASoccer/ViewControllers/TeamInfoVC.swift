@@ -7,10 +7,16 @@
 
 import UIKit
 
-class TeamInfoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class TeamInfoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
+   
     
     
-
+    
+    @IBOutlet weak var TransferInTableView: UITableView!
+    @IBOutlet weak var TransferOutTableView: UITableView!
+    @IBOutlet weak var SideLinedTableView: UITableView!
+    
+    
     @IBOutlet weak var ClubName: UILabel!
     @IBOutlet weak var Country: UILabel!
     @IBOutlet weak var StadiumName: UILabel!
@@ -30,6 +36,10 @@ class TeamInfoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        TransferOutTableView.delegate = self
+//        TransferOutTableView.dataSource = self
+//        TransferInTableView.delegate = self
+//        TransferInTableView.dataSource = self
         //football class contains the codeless functions in Backendless server
         //getTeamInfoDataJsonData() method returning raw json data as planned in backendless Codeless method that created there
         //getJsonData will parse the JSON from backendless.getTeamInfoDataJsonData to an Array of CompetitionStanding(struct)
@@ -79,13 +89,9 @@ class TeamInfoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         //make the StadiumCity Label in lines to fit in the small screens
         StadiumName.lineBreakMode = NSLineBreakMode.byWordWrapping
         StadiumName.numberOfLines = 0
-
         
         StadiumCity.text = currentTeamInfo?.venue_city
-        //make the StadiumCity Label in lines to fit in the small screens
-        StadiumCity.lineBreakMode = NSLineBreakMode.byWordWrapping
-        StadiumCity.numberOfLines = 0
-
+        
         capacity.text = currentTeamInfo?.venue_capacity
         FoundedYear.text = currentTeamInfo?.founded
         
@@ -94,9 +100,105 @@ class TeamInfoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         CoachName.lineBreakMode = NSLineBreakMode.byWordWrapping
         CoachName.numberOfLines = 0
     }
+
+    /////////////  Tables View /////////////////////
+    ///////////////////////////////////////////////
+    ///////////////////////////////////////////////
+    ///////////////////////////////////////////////
+    ///////////////////////////////////////////////
     
     
-    ////////////// Comllection View ///////////////
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == TransferInTableView{
+            return (currentTeamInfo?.transfers_in!.count)!
+        }
+        if tableView == TransferOutTableView{
+            return (currentTeamInfo?.transfers_out!.count)!
+        }
+        if tableView == SideLinedTableView{
+            return (currentTeamInfo?.sidelined!.count)!
+        }
+        displayMessage(userMessage: "something went wrong with loading one of the Tables, please Retry Again Later")
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = TeamInfoTransferInTableViewCell()
+        
+        if tableView == TransferInTableView{
+            cell = TransferInTableView.dequeueReusableCell(withIdentifier: "TeamInfoTransferInTableViewCell", for: indexPath) as! TeamInfoTransferInTableViewCell
+            
+            if currentTeamInfo?.transfers_in != nil {
+                cell.name?.text = currentTeamInfo?.transfers_in![indexPath.row].name
+                //make the name Label in lines to fit in the small screens
+                cell.name.lineBreakMode = NSLineBreakMode.byWordWrapping
+                cell.name.numberOfLines = 0
+            
+                cell.fromClub?.text = currentTeamInfo?.transfers_in![indexPath.row].from_team
+                //make the fromClub Label in lines to fit in the small screens
+                cell.fromClub.lineBreakMode = NSLineBreakMode.byWordWrapping
+                cell.fromClub.numberOfLines = 0
+                
+                cell.date?.text = currentTeamInfo?.transfers_in![indexPath.row].date
+                cell.type?.text = currentTeamInfo?.transfers_in![indexPath.row].type
+            } else {
+                cell.name?.text = "there is no Transfer In in the meantime :)"
+            }
+            return cell
+        }
+        
+        if tableView == TransferOutTableView{
+            let TransferOutCell = TransferOutTableView.dequeueReusableCell(withIdentifier: "TeamInfoTransferOutTableViewCell", for: indexPath) as! TeamInfoTransferOutTableViewCell
+            
+            if currentTeamInfo?.transfers_out != nil {
+                TransferOutCell.name?.text = currentTeamInfo?.transfers_out![indexPath.row].name
+                //make the name Label in lines to fit in the small screens
+                TransferOutCell.name.lineBreakMode = NSLineBreakMode.byWordWrapping
+                TransferOutCell.name.numberOfLines = 0
+                
+                
+                TransferOutCell.toClub?.text = currentTeamInfo?.transfers_out![indexPath.row].to_team
+                //make the toClub Label in lines to fit in the small screens
+                TransferOutCell.toClub.lineBreakMode = NSLineBreakMode.byWordWrapping
+                TransferOutCell.toClub.numberOfLines = 0
+                
+                TransferOutCell.date?.text = currentTeamInfo?.transfers_out![indexPath.row].date
+                TransferOutCell.type?.text = currentTeamInfo?.transfers_out![indexPath.row].type
+            } else {
+                TransferOutCell.name?.text = "there is no Transfer Out in the meantime :)"
+            }
+            return TransferOutCell
+        }
+        
+        if tableView == SideLinedTableView{
+             let SideLinedCell = SideLinedTableView.dequeueReusableCell(withIdentifier: "TeamInfoSideLinedTableViewCell", for: indexPath) as! TeamInfoSideLinedTableViewCell
+            if currentTeamInfo?.sidelined != nil {
+                SideLinedCell.name?.text = currentTeamInfo?.sidelined![indexPath.row].name
+                //make the name Label in lines to fit in the small screens
+                SideLinedCell.name.lineBreakMode = NSLineBreakMode.byWordWrapping
+                SideLinedCell.name.numberOfLines = 0
+                
+                SideLinedCell.startDate?.text = currentTeamInfo?.sidelined![indexPath.row].startdate
+                SideLinedCell.endDate?.text = SideLinedCell.endDate?.text == nil ? currentTeamInfo?.sidelined![indexPath.row].enddate : "unknown"
+            
+                SideLinedCell.Desc?.text = currentTeamInfo?.sidelined![indexPath.row].description
+                //make the description Label in lines to fit in the small screens
+                SideLinedCell.Desc.lineBreakMode = NSLineBreakMode.byWordWrapping
+                SideLinedCell.Desc.numberOfLines = 0
+            } else {
+                SideLinedCell.name?.text = "there is no SideLined in the meantime :)"
+            }
+            return SideLinedCell
+        }
+        
+        return cell
+    }
+    
+    
+    
+    
+    
+    ////////////// Collection View ///////////////
     ///////////////////////////////////////////////
     ///////////////////////////////////////////////
     ///////////////////////////////////////////////
@@ -108,7 +210,7 @@ class TeamInfoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamInfoCollectionViewCell", for: indexPath) as! TeamInfoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamInfoCollectionViewCell", for: indexPath) as! TeamInfoCollectionViewCell
         
         cell.playerName?.text = currentTeamInfo?.squad![indexPath.row].name
         //make the TeamName Label in lines to fit in the small screens
