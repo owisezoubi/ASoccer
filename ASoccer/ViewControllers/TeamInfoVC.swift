@@ -217,7 +217,8 @@ class TeamInfoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         cell.playerName.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.playerName.numberOfLines = 0
         
-        cell.playerAge?.text = currentTeamInfo?.squad![indexPath.row].number
+        cell.playerNumber?.text = currentTeamInfo?.squad![indexPath.row].number
+        print(currentTeamInfo?.squad![indexPath.row].number)
         
         return cell
     }

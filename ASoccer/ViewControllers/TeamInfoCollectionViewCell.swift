@@ -10,7 +10,7 @@ import UIKit
 class TeamInfoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var playerName: UILabel!
-    @IBOutlet weak var playerAge: UILabel!
+    @IBOutlet weak var playerNumber: UILabel!
     
     override func layoutSubviews() {
         super.layoutSubviews()
